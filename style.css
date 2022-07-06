@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+
+/* Loading */
+
+#loading-container {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 9;
+}
+.overflow-hidden {
+    overflow: hidden;
+}
+.loading {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(
+      165deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgb(220, 220, 220) 40%,
+      rgb(170, 170, 170) 98%,
+      rgb(10, 10, 10) 100%
+    );
+    border-radius: 50%;
+    position: relative;
+  }
+  .loading:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    border-bottom: 0 solid #ffffff05;
+    box-shadow: 0 -10px 20px 20px #ffffff40 inset,
+      0 -5px 15px 10px #ffffff50 inset, 0 -2px 5px #ffffff80 inset,
+      0 -3px 2px #ffffffbb inset, 0 2px 0px #ffffff, 0 2px 3px #ffffff,
+      0 5px 5px #ffffff90, 0 10px 15px #ffffff60, 0 10px 20px 20px #ffffff40;
+    filter: blur(3px);
+    animation: 2s rotate linear infinite;
+  }
+  @keyframes rotate {
+    100% { transform: rotate(360deg) }
+  }
+      
+/*  */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: 'Rubik', sans-serif;
+    scrollbar-color: rgba(0, 0, 0, 0.408) rgba(255, 255, 255, 0.457);
+    scrollbar-width: thin;
+    /* outline: 2px solid green; */}
+.static {
+    overflow: hidden;}
+html {
+    scroll-behavior: smooth;}
+body {
+    position: relative;}
+a {
+    text-decoration: none;}
+#header {
+    background:transparent;
+    padding: 2em;
+    transition: background 0.4s ease;
+    position: absolute;
+    top: 0;
+    width: calc(100% - 4em);
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+    align-items: center;}
+#header.active {
+    position: fixed;
+    top: 0;
+    width: calc(100% - 4em);
+    /* background: rgb(13, 2, 2); */
+}
+    #header h1 {
+        font-size: 1.8em;}
+    #header ul {
+        display: flex;}
+    #header span { 
+        display: none;}
+    @media screen and (max-width: 1100px) {
+        #header h1 {
+            width: 50%;}
+        #header ul {
+            display: none;}
+        #header span {
+            display: block;
+            transform: scale(2);
+            position: relative;
+            cursor: pointer;
+            left: 5%;}
+    }
+        #header ul li {
+            margin-right: 1.5em;
+            list-style: none;
+            position: relative;}
+            #header ul li a {
+                color: #fff;
+                transition: all 0.3s ease;
+                padding: 10px;
+                text-transform: uppercase;}
+            #header ul li a::before {
+                content: "";
+                height: 5px;
+                display: block;
+                width: 100%;
+                background: #fff;
+                position: absolute;
+                transform: scaleX(0);
+                transition: all .3s ease;
+                margin: 5px 0 0 0;}
+            #header ul li a:hover::before {
+                transform: scaleX(1);
+            }
+            #header ul li a:hover {
+                padding: 10px;}
+#main #particles-js {
+    background: url('https://wallpaperaccess.com/full/2367875.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    color: #fff;}
+#home {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;}
+#aside {
+    position: fixed;
+    background: rgb(9, 1, 1);
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100vh;
+    z-index: 2;
+    color: #fff;
+    transform: translateX(400px);
+    transition: all .5s ease;}
+#aside.active {
+    transform: translateX(0);}
+    #aside .header {
+        background: rgba(255, 255, 255, 0.134);
+        position: relative;
+        top: 0;
+        width: calc(100% - 4em);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: end;
+        padding: 2.5em ;}
+    #aside .header i {
+        transform: scale(2.4);
+        cursor: pointer;
+        margin: 0 65px 0 0;
+        transition: all 1s ease;
+        opacity: 0;}
+    #aside.active .header i {
+        opacity: 1;
+    }
+    #aside .content {
+        background: rgba(255, 255, 255, 0.134);
+        height: calc(100vh - 50px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;}
+        #aside .content ul {
+            display: flex;
+            flex-direction: column;
+            transform: translateX(400px);
+            transition: all .8s ease-in-out;
+            gap: 3em;}
+        #aside.active .content ul {
+            transform: translateX(0);
+        }
+        #aside .content ul li {
+            list-style: none;
+            text-transform: uppercase;}
+        #aside .content ul li a {
+            color: #fff;
+            position: relative;
+            font-size: 30px;
+            transition: all .5s ease;}
+        #aside .content ul li a::before {
+            content: "";
+            display: block;
+            margin: -10px auto;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 5px;
+            background: #fff;
+            opacity: 0;
+            transition: all .5s ease;
+            transform: scaleX(0);
+        }
+        #aside .content ul li a:hover::before {
+            opacity: 1;
+            transform: scaleX(1);
+        }
+        #aside .content ul li a:hover {
+            color: rgba(255, 255, 255, 0.778);
+            font-size: 30px;}
+.overlay {
+    height: calc(100vh - 50px);
+    background: rgba(0, 0, 0, 0.448);
+    width: 100vw;
+    position: absolute;
+    top: 0;
+}
+
+#aboutme {
+    height: 100vh;
+}
