@@ -31,6 +31,10 @@ for (const link of asideLinks) {
     link.addEventListener('click', toggleAside);
 }
 
+const copyright = document.getElementById('copyright');
+const date = new Date();
+copyright.innerText = date.getFullYear();
+
 particlesJS('particles-js',  
   {
     "particles": {
