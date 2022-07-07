@@ -57,7 +57,8 @@
     font-family: 'Rubik', sans-serif;
     scrollbar-color: rgba(0, 0, 0, 0.408) rgba(255, 255, 255, 0.457);
     scrollbar-width: thin;
-    /* outline: 2px solid green; */}
+    /* outline: 2px solid green; */
+}
 .static {
     overflow: hidden;}
 html {
@@ -76,12 +77,13 @@ a {
     display: flex;
     justify-content: space-around;
     color: #fff;
-    align-items: center;}
+    align-items: center;
+    z-index: 1;}
 #header.active {
     position: fixed;
     top: 0;
     width: calc(100% - 4em);
-    /* background: rgb(13, 2, 2); */
+    background: rgba(21, 4, 4, 0.839);
 }
     #header h1 {
         font-size: 1.8em;}
@@ -126,7 +128,8 @@ a {
             #header ul li a:hover {
                 padding: 10px;}
 #main #particles-js {
-    background: url('https://wallpaperaccess.com/full/2367875.jpg');
+    /* background: url('https://wallpaperaccess.com/full/2367875.jpg'); */
+    background: linear-gradient(to bottom, #4B313A, #080E1C);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -226,5 +229,47 @@ a {
 }
 
 #aboutme {
+    height: calc(100vh - 10em);
+    /* width: calc(100% - 4em); */
+    position: relative;
+    background: linear-gradient(to top, #4B313A, #080E1C);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+    place-items: center;
+    color: #fff;
+    gap: 1em;
+    padding: 5em;}
+@media screen and (max-width: 768px){
+    #aboutme {
+        height: 100vh;
+        padding: 2em;}}
+    #aboutme > span {
+        position: absolute;
+        background: red;
+        top: -100px;
+        z-index: -1;}
+    #aboutme .img {
+        width: 400px;
+        max-width: 90%;}
+        #aboutme .img img{
+            width: 100%;}
+    #aboutme .info h2 {
+        text-align: center;
+        font-size: 30px;
+        padding: 0 0 1.5em 0;}
+    #aboutme .info p {
+        text-align: center;
+        line-height: 30px;}
+
+#techs {
     height: 100vh;
+    background: linear-gradient(to bottom, #4B313A, #080E1C);
+}
+#projects {
+    height: 100vh;
+    background: linear-gradient(to top, #4B313A, #080E1C);
+}
+#contact {
+    height: 100vh;
+    background: linear-gradient(to bottom, #4B313A, #080E1C);
 }
