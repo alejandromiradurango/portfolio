@@ -129,10 +129,7 @@ a {
                 padding: 10px;}
 #main #particles-js {
     /* background: url('https://wallpaperaccess.com/full/2367875.jpg'); */
-    background: linear-gradient(to bottom, #4B313A, #080E1C);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: linear-gradient(to bottom, #4B313A, #080E1C) no-repeat center;
     height: 100vh;
     display: grid;
     place-items: center;
@@ -174,8 +171,7 @@ a {
         transition: all 1s ease;
         opacity: 0;}
     #aside.active .header i {
-        opacity: 1;
-    }
+        opacity: 1;}
     #aside .content {
         background: rgba(255, 255, 255, 0.134);
         height: calc(100vh - 50px);
@@ -190,8 +186,7 @@ a {
             transition: all .8s ease-in-out;
             gap: 3em;}
         #aside.active .content ul {
-            transform: translateX(0);
-        }
+            transform: translateX(0);}
         #aside .content ul li {
             list-style: none;
             text-transform: uppercase;}
@@ -211,12 +206,10 @@ a {
             background: #fff;
             opacity: 0;
             transition: all .5s ease;
-            transform: scaleX(0);
-        }
+            transform: scaleX(0);}
         #aside .content ul li a:hover::before {
             opacity: 1;
-            transform: scaleX(1);
-        }
+            transform: scaleX(1);}
         #aside .content ul li a:hover {
             color: rgba(255, 255, 255, 0.778);
             font-size: 30px;}
@@ -225,12 +218,9 @@ a {
     background: rgba(0, 0, 0, 0.448);
     width: 100vw;
     position: absolute;
-    top: 0;
-}
-
+    top: 0;}
 #aboutme {
     height: calc(100vh - 10em);
-    /* width: calc(100% - 4em); */
     position: relative;
     background: linear-gradient(to top, #4B313A, #080E1C);
     display: grid;
@@ -245,7 +235,6 @@ a {
         padding: 2em;}}
     #aboutme > span {
         position: absolute;
-        background: red;
         top: -100px;
         z-index: -1;}
     #aboutme .img {
@@ -260,16 +249,36 @@ a {
     #aboutme .info p {
         text-align: center;
         line-height: 30px;}
-
 #techs {
     height: 100vh;
-    background: linear-gradient(to bottom, #4B313A, #080E1C);
-}
+    background: linear-gradient(to bottom, #4B313A, #080E1C);}
 #projects {
     height: 100vh;
-    background: linear-gradient(to top, #4B313A, #080E1C);
-}
+    background: linear-gradient(to top, #4B313A, #080E1C);}
 #contact {
     height: 100vh;
-    background: linear-gradient(to bottom, #4B313A, #080E1C);
-}
+    background: linear-gradient(to bottom, #4B313A, #080E1C);}
+#footer {
+    height: 8em;
+    background: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 26px;}
+    #footer ul {
+        display: flex;
+        gap: 50px;}
+        #footer ul li {
+            list-style: none;}
+        #footer ul li a {
+            color: #fff;
+            transition: all .5s ease;}
+        #footer ul li a:hover {
+            color: rgba(255, 255, 255, 0.813);}
+        #footer ul li i {
+            transform: scale(2);
+            transition: all 0.5s ease;}
+        #footer ul li i:hover {
+            transform: scale(2.5);
+            text-shadow: 0px 0px 7px rgba(255, 255, 255, 0.394);}
